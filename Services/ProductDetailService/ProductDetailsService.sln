@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductDetailsService", "ProductDetailsService\ProductDetailsService.csproj", "{88619D96-26D9-475B-9451-F393CFC5171F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductDetailsService", "ProductDetailsService\ProductDetailsService.csproj", "{88619D96-26D9-475B-9451-F393CFC5171F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductDetails.Application", "ProductDetails.Application\ProductDetails.Application.csproj", "{1FEA2409-182C-470D-9BC6-79BD3FC26ED5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductDetails.Application", "ProductDetails.Application\ProductDetails.Application.csproj", "{1FEA2409-182C-470D-9BC6-79BD3FC26ED5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductDetails.Infrastructure", "ProductDetails.Infrastructure\ProductDetails.Infrastructure.csproj", "{384CBDB2-E5F0-47D4-B4CD-61364B954EB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductDetails.Infrastructure", "ProductDetails.Infrastructure\ProductDetails.Infrastructure.csproj", "{384CBDB2-E5F0-47D4-B4CD-61364B954EB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductDetails.Domain", "ProductDetails.Domain\ProductDetails.Domain.csproj", "{D470A869-001C-444D-AE13-E50C49DEC1BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductDetails.Domain", "ProductDetails.Domain\ProductDetails.Domain.csproj", "{D470A869-001C-444D-AE13-E50C49DEC1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
