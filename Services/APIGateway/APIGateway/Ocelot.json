@@ -1,0 +1,21 @@
+
+  {
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/v1/add-product",
+        "DownstreamScheme": "http",
+        "DownstreamHttpMethod": "POST",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5035
+          }
+        ],
+        "UpstreamPathTemplate": "/getProductDetails",
+        "UpstreamHttpMethod": ["POST"]
+
+      }
+    ]
+  }
+
+

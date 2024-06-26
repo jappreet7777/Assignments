@@ -1,5 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using ProductDetails.Application.Interface;
+using ProductDetails.Application;
 using ProductDetails.Infrastructure.ProductDetails;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ProductDetailsService
 {
@@ -15,8 +19,16 @@ namespace ProductDetailsService
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("ProductDetailsDB");
-            services.AddDbContext<ProductDBContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<ProductDBContext>(options => options.UseSqlServer(connectionString),ServiceLifetime.Transient);
             services.AddControllersWithViews();
+            services.AddScoped<IProductDetailService, ProductDetailService>();
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +51,8 @@ namespace ProductDetailsService
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+           
+
         }
     }
 }

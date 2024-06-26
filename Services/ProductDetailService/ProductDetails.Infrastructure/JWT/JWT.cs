@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductDetails.Domain.DTO
+namespace ProductDetails.Infrastructure.JWT
 {
-    public class AddProductResponseDTO
+    public class JWT
     {
-        public string ProductId { get; set;} 
-
-
-        
     }
 }

@@ -20,7 +20,8 @@ namespace ProductDetails.Infrastructure.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Design = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Quantity = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    isDelete=table.Column<bool>(type:"bool",nullable: false),
                 },
                 constraints: table =>
                 {

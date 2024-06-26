@@ -16,12 +16,12 @@ namespace ProductDetails.Domain.Entities
         public decimal Price { get; set; }
         public string  Design {  get; set; }
         public decimal Quantity { get; set; }
+        public bool isDelete{ get; set; } = false;
 
         public ProductInfo()
         {
-           Id = Guid.NewGuid().ToString();
-           CreatedAt = DateTime.UtcNow;
+            Id = Guid.NewGuid().ToString();
+            CreatedAt = DateTime.UtcNow;
         }
-
     }
 }
