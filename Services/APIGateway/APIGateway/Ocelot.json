@@ -11,10 +11,54 @@
             "Port": 5035
           }
         ],
-        "UpstreamPathTemplate": "/getProductDetails",
-        "UpstreamHttpMethod": ["POST"]
+        "UpstreamPathTemplate": "/addProductDetails",
+        "UpstreamHttpMethod": [ "POST" ]
+
+      },
+      {
+        "DownstreamPathTemplate": "/api/v1/Delete-Product",
+        "DownstreamScheme": "http",
+        "DownstreamHttpMethod": "POST",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5035
+          }
+        ],
+        "UpstreamPathTemplate": "/deleteProductDetials",
+        "UpstreamHttpMethod": [ "POST" ]
+
+      },
+      {
+        "DownstreamPathTemplate": "/api/v1/Update-Product",
+        "DownstreamScheme": "http",
+        "DownstreamHttpMethod": "POST",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5035
+          }
+        ],
+        "UpstreamPathTemplate": "/updateProductDetials",
+        "UpstreamHttpMethod": [ "POST" ]
+
+      },
+      {
+        "DownstreamPathTemplate": "/api/v2/login",
+        "DownstreamScheme": "http",
+        "DownstreamHttpMethod": "POST",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5076
+          }
+        ],
+        "UpstreamPathTemplate": "/login",
+        "UpstreamHttpMethod": [ "POST" ]
 
       }
+
+
     ]
   }
 
