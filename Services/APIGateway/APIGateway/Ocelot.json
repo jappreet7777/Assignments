@@ -16,6 +16,21 @@
 
       },
       {
+        "DownstreamPathTemplate": "/api/v1/Specific-Product",
+        "DownstreamScheme": "http",
+        "DownstreamHttpMethod": "POST",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5035
+          }
+        ],
+        "UpstreamPathTemplate": "/specificProductDetails",
+        "UpstreamHttpMethod": [ "POST" ]
+
+      },
+
+      {
         "DownstreamPathTemplate": "/api/v1/Delete-Product",
         "DownstreamScheme": "http",
         "DownstreamHttpMethod": "POST",

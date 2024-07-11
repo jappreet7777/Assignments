@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using ProductDetails.Application.Interface;
-using ProductDetails.Application;
 using ProductDetails.Infrastructure.ProductDetails;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using ProductDetails.Application.Services;
+using ProductDetails.Application.Interface;
+using NLog.Extensions.Logging;
 
 namespace ProductDetailsService
 {
@@ -37,6 +38,18 @@ namespace ProductDetailsService
                          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                      };
                  });
+            services.AddLogging( logging =>
+            {
+                logging.ClearProviders();
+                logging.SetMinimumLevel(LogLevel.Trace);
+                logging.AddConsole();
+                logging.AddDebug();
+                logging.AddEventSourceLogger();
+                // Enable NLog as one of the Logging Provider
+                logging.AddNLog();
+
+
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

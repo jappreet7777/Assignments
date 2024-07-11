@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProductDetails.Application;
+using ProductDetails.Application.Interface;
 using ProductDetails.Domain.DTO;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -64,6 +64,36 @@ namespace ProductDetailsService.Controllers
             if (ModelState.IsValid)
             {
                 var result = _productDetailService.UpdateProduct(request);
+                return Ok(result.Result);
+
+            }
+            return BadRequest("Invalid Request");
+        }
+
+        [HttpPost("Specific-Product")]
+        [SwaggerOperation(Summary = "Fetch Specific  product details")]
+        [Route("api/v1/Specific-Product")]
+
+        public async Task<IActionResult> specifiProduct([FromBody] string request)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _productDetailService.specificProducts(request);
+                return Ok(result.Result);
+
+            }
+            return BadRequest("Invalid Request");
+        }
+
+        [HttpPost("Checkout-Product")]
+        [SwaggerOperation(Summary = "Checkout Product")]
+        [Route("api/v1/Checkout-Product")]
+        [Authorize(Roles = "Seller")]
+        public async Task<IActionResult> checkoutProduct([FromBody] string request)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _productDetailService.checkout(request);
                 return Ok(result.Result);
 
             }
